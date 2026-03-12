@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Nunito_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/header";
+import { Toaster } from "@/components/ui/sonner";
 
 const nunitoSans = Nunito_Sans({variable:'--font-sans'});
 
@@ -33,6 +34,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <Toaster position="top-center"/>
       </body>
     </html>
   );
