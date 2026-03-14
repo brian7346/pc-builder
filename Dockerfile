@@ -29,4 +29,4 @@ COPY --from=builder /app/next.config.ts ./next.config.ts
 
 EXPOSE 3000
 
-CMD ["sh", "-c", "npx prisma migrate deploy && npm run start"]
+CMD ["sh", "-c", "npx prisma migrate deploy && if [ \"$RUN_SEED_ON_START\" = \"true\" ]; then npx tsx prisma/seed.ts; fi && npm run start"]
